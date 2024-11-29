@@ -20,7 +20,7 @@ export default async function Page({
 
   const userid = (await params).userid
   const ticks = new Date().getTime();
- /% const userid = usePathname() + ticks.toString();
+ //const userid = usePathname() + ticks.toString();
   
   return (
     <main>
