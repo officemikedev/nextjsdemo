@@ -17,9 +17,11 @@ export default async function Page({
   // const latestInvoices = await fetchLatestInvoices();
   //const {totalPaidInvoices, totalPendingInvoices, numberOfInvoices, numberOfCustomers} = await fetchCardData();
   //const params = useParams();
-  const userid " usePathname();
+
   //const userid = (await params).userid
-  const ticks = new Date();
+  const ticks = new Date().getTime();
+  const userid = usePathname() + ticks.toString();
+  
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
