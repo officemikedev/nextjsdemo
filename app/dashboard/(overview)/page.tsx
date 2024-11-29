@@ -28,7 +28,7 @@ export default async function Page({
         Dashboard ticks = {ticks}
       </h1>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <Suspense key={ticks} fallback={<CardsSkeleton/>}>
+        <Suspense key={ticks+1} fallback={<CardsSkeleton/>}>
         <CardWrapper  userid={userid}/>
         </Suspense>
         {/* <Card title="Collected" value={totalPaidInvoices} type="collected" />
@@ -41,11 +41,11 @@ export default async function Page({
         /> */}
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-      <Suspense  key={ticks} fallback={<RevenueChartSkeleton />}>
-          <RevenueChart />
+      <Suspense  key={ticks+2} fallback={<RevenueChartSkeleton />}>
+          <RevenueChart key={ticks+3}/>
         </Suspense>
         <Suspense key={ticks}  fallback={<LatestInvoicesSkeleton />}>
-          <LatestInvoices/>
+          <LatestInvoices key={ticks+4} />
         </Suspense>
       </div>
     </main>
